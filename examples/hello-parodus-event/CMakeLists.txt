@@ -53,8 +53,8 @@ find_package (Threads)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(trower-base64
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/trower-base64
-    GIT_REPOSITORY https://github.com/Comcast/trower-base64.git
-    GIT_TAG "master"
+    GIT_REPOSITORY https://github.com/rdkcentral/trower-base64.git
+    GIT_TAG "develop"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
 add_library(libtrower-base64 STATIC SHARED IMPORTED)
@@ -105,8 +105,8 @@ add_dependencies(libmsgpack msgpack)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/cimplog
-    GIT_REPOSITORY https://github.com/Comcast/cimplog.git
-    GIT_TAG "master"
+    GIT_REPOSITORY https://github.com/rdkcentral/cimplog.git
+    GIT_TAG "develop"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
 add_library(libcimplog STATIC SHARED IMPORTED)
@@ -118,8 +118,8 @@ add_dependencies(libcimplog cimplog)
 ExternalProject_Add(wrp-c
     DEPENDS trower-base64 msgpack
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/wrp-c
-    GIT_REPOSITORY https://github.com/Comcast/wrp-c.git
-    GIT_TAG "master"
+    GIT_REPOSITORY https://github.com/rdkcentral/wrp-c.git
+    GIT_TAG "develop"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMSGPACK_ENABLE_CXX=OFF
                   -DMSGPACK_BUILD_EXAMPLES=OFF
@@ -137,8 +137,8 @@ add_dependencies(libwrp-c wrp-c)
 ExternalProject_Add(libparodus
     DEPENDS trower-base64 msgpack nanomsg wrp-c
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/libparodus
-    GIT_REPOSITORY https://github.com/Comcast/libparodus.git
-    GIT_TAG "master"
+    GIT_REPOSITORY https://github.com/rdkcentral/libparodus.git
+    GIT_TAG "develop"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
     		  -DMAIN_PROJ_BUILD=ON
     		  -DMAIN_PROJ_LIB_PATH=${LIBRARY_DIR}
