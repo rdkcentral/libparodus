@@ -84,7 +84,7 @@ for line in fin:
 
 payload_str = ",".join (set_list)
 
-url_base = "https://<webpa-host>:8090/api/v2/device/"
+url_base = "https://api-beta.webpa.comcast.net:8090/api/v2/device/"
 
 cmd_url = "%smac:%s/%s?names=%s" % (url_base, device_id, SERVICE_NAME, payload_str)
 #print cmd_url
@@ -132,4 +132,4 @@ except StandardError, e:
 #f = URL.urlopen (req)
 
 
-#  -k https://<webpa-host>:8090/api/v2/device/mac:14cfe213e1d2/config?names=
+#  -k https://scytale-beta.webpa.comcast.net:8090/api/v2/device/mac:14cfe213e1d2/config?names=
